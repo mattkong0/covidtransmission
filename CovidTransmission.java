@@ -17,12 +17,12 @@
  public class CovidTransmission {
      public static void main(String[] args) {
          Scanner scnr = new Scanner(System.in);
-         private static final D1;
-         private static final H1;
-         private static final M1;
-         private static final D2;
-         private static final H2;
-         private static final M2;
+         int D1;
+         int H1;
+         int M1;
+         int D2;
+         int H2;
+         int M2;
 
          D1 = scnr.nextInt();
          H1 = scnr.nextInt();

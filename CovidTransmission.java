@@ -60,13 +60,13 @@
             System.out.println("-1 -1 ");
             return;
         }
-        else if ((totalMinutes >= 0) && (totalMinutes < 60)) {
+        else if ((totalMinutes >= 0) && (totalMinutes <= 60)) {
             System.out.println(totalMinutes + " " + r1);
         }
-        else if ((totalMinutes >= 60) && (totalMinutes < 180)) {
+        else if ((totalMinutes > 60) && (totalMinutes <= 180)) {
             System.out.println(totalMinutes + " " + r2);
         }
-        else if ((totalMinutes >= 180) && (totalMinutes < 360)) {
+        else if ((totalMinutes > 180) && (totalMinutes <= 360)) {
             System.out.println(totalMinutes + " " + r3);
         }
         else {

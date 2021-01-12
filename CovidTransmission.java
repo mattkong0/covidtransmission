@@ -31,7 +31,7 @@
          H2 = scnr.nextInt();
          M2 = scnr.nextInt();
 
-         System.out.println(D1 + " " + H1 + " " + M1 + " " + D2 + " " + H2 + " " + M2);
+        System.out.println(D1 + " " + H1 + " " + M1 + " " + D2 + " " + H2 + " " + M2);
 
         // Conversions to Minutes (1440 minutes in a day and 60 minutes in an hour)
         int daysToMinutes = (D2 - D1) * 1440;

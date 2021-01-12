@@ -2,8 +2,9 @@
  * Name: Matthew Kong
  * ID: A16660796
  * Email: mkong@ucsd.edu
- * Sources used: zyBook, 
+ * Sources used: zyBook, tutor
  * 
+ * This file calculates how long person A interacted with person B.
  * This file is used to project the risk of the virus transmitting.
  */
 
@@ -31,7 +32,7 @@
          H2 = scnr.nextInt();
          M2 = scnr.nextInt();
 
-        System.out.println(D1 + " " + H1 + " " + M1 + " " + D2 + " " + H2 + " " + M2);
+        System.out.println("Input: " + D1 + " " + H1 + " " + M1 + " " + D2 + " " + H2 + " " + M2);
 
         // Conversions to Minutes (1440 minutes in a day and 60 minutes in an hour)
         int daysToMinutes = (D2 - D1) * 1440;
@@ -54,24 +55,24 @@
 
         // Determine risk level based on total time of interaction
         if (! ((D1 >= 1) && (D1 <= 31)))  {
-            System.out.println("-1 -1 " + "(D1 is out of range)" );
+            System.out.println("Output: " + "-1 -1 " + "(D1 is out of range)" );
             return;
         }
         else if (D1 > D2) {
-            System.out.println("-1 -1 " + "(D2 H2 M2 represents an earlier time than D1 H1 M1)");
+            System.out.println("Output: " + "-1 -1 " + "(D2 H2 M2 represents an earlier time than D1 H1 M1)");
             return;
         }
         else if ((totalMinutes >= 0) && (totalMinutes < 60)) {
-            System.out.println(totalMinutes + " " + r1);
+            System.out.println("Output: " + totalMinutes + " " + r1);
         }
         else if ((totalMinutes >= 60) && (totalMinutes < 180)) {
-            System.out.println(totalMinutes + " " + r2);
+            System.out.println("Output: " + totalMinutes + " " + r2);
         }
         else if ((totalMinutes >= 180) && (totalMinutes < 360)) {
-            System.out.println(totalMinutes + " " + r3);
+            System.out.println("Output: " + totalMinutes + " " + r3);
         }
         else {
-            System.out.println(totalMinutes + " " + r4);
+            System.out.println("Output: " + totalMinutes + " " + r4);
         }
          
      }

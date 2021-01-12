@@ -52,11 +52,22 @@
         r4 = "HIGH";
 
         // Determine risk level based on total time of interaction
-        if (! ((D1 >= 1) && (D1 <= 31)))  {
+        if (! ((D1 >= 1) && (D1 <= 31) && (D2 >= 1) && (D2 <= 31)))  {
             System.out.println("-1 -1 ");
             return;
         }
+        else if (! ((H1 >= 0) && (H1 <= 23) && (H2 >= 0) && (H2 <= 23))) {
+            System.out.println("-1 -1 ");
+            return;
+        }
+        else if (! ((M1 >= 0) && (M1 <= 59) && (M2 >= 0) && (M2 <= 59))) {
+            System.out.println("-1 -1 ");
+        }
         else if (D1 > D2) {
+            System.out.println("-1 -1 ");
+            return;
+        }
+        else if (((D1 == D2) && (H1 > H2)) || ((D1 == D2) && (M1 > M2))) {
             System.out.println("-1 -1 ");
             return;
         }

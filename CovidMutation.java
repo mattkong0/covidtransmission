@@ -30,11 +30,14 @@ public class CovidMutation {
         if (k < 0) {
             System.out.print(sequence);
         }
-        else if (sequence.length() % k == 0) {
-            for (int i = 0; i < sequence.length() / k; i++) {
-                for (int j = i * k + (k - 1); j >= i * k; j--) {//assuming that the string length is divisble by k
-                    result = result + sequence.charAt(j);
-                }
+        for (int i = 0; i < sequence.length() / k; i++) {
+            for (int j = i * k + (k - 1); j >= i * k; j--) {//assuming that the string length is divisble by k
+                result = result + sequence.charAt(j);
+            }
+        }
+        if (sequence.length() % k != 0) {
+            for (int l = sequence.length() - 1; l >= k; l--) {//check to see if there are any remaining characters after k-reversing
+                result = result + sequence.charAt(l);
             }
         }
         System.out.print(result);

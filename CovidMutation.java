@@ -27,9 +27,14 @@ public class CovidMutation {
 
         // Output Sequence
         String result = "";
-        for (int i = 0; i < sequence.length() / k; i++) {
-            for (int j = i * k + (k - 1); j >= i * k; j--) {//assuming that the string length is divisble by k
-                result = result + sequence.charAt(j);
+        if (k < 0) {
+            System.out.print(sequence);
+        }
+        else if (sequence.length() % k == 0) {
+            for (int i = 0; i < sequence.length() / k; i++) {
+                for (int j = i * k + (k - 1); j >= i * k; j--) {//assuming that the string length is divisble by k
+                    result = result + sequence.charAt(j);
+                }
             }
         }
         System.out.print(result);

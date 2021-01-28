@@ -41,8 +41,7 @@ public class Cipher {
         char ct = key;
         char plain = plaintext;
 
-        if (! ( ( (plain >= 'a') && (plain <= 'z') ) && 
-           ( (ct >= 'a') && (ct <= 'z') ) ) ) {
+        if (! ( (isLowerCase(plain) ) && (isLowerCase(ct) ) ) )  {
             return plain;
         }
         else {
@@ -56,12 +55,11 @@ public class Cipher {
         char pt = key;
         char cipher = ciphertext;
 
-        if (! ( ( (cipher >= 'a') && (cipher <= 'z') ) && 
-           ( (pt >= 'a') && (pt <= 'z') ) ) ) {
+        if (! ( (isLowerCase(cipher) ) && (isLowerCase(pt) ) ) ) {
             return cipher;
         }
         else {
-            pt = (char)(( Math.abs(((int)pt - 'a') - ((int)cipher - 'a')) ) % 26 + 'a');
+            pt = (char)((Math.abs(((int)pt - 'a') - ((int)cipher - 'a'))) % 26 + 'a');
         }
         return pt;
     }

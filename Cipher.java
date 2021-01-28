@@ -79,6 +79,11 @@ public class Cipher {
             }
         }
 
+        //key has no characters
+        if (ke.equals("")) {
+            return null;
+        }
+
         //checking for Uppercase letters for the key
         for (int i = 0; i < ke.length(); i++) {
             if (! ((ke.charAt(i) >= 'a') && (ke.charAt(i) <= 'z')) ) {
@@ -104,6 +109,11 @@ public class Cipher {
             if (! ((ctxt.charAt(i) >= 'a') && (ctxt.charAt(i) <= 'z')) ) {
                 return null;
             }
+        }
+
+        //key has no characters
+        if (ky.equals("")) {
+            return null;
         }
 
         //checking for Uppercase letters for the key

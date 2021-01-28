@@ -36,7 +36,7 @@ public class Cipher {
         return true;
     }
 
-    //Caesar Cipher Part 1
+    //Caesar Cipher Part 1 (encrypting the plaintext)
     public static char caesarShiftEncode(char plaintext, char key) {
         char ct = key;
         char plain = plaintext;
@@ -50,7 +50,7 @@ public class Cipher {
         return ct;
     }
 
-    //Caesar Cipher Part 2
+    //Caesar Cipher Part 2 (decrypting the ciphertext)
     public static char caesarShiftDecode(char ciphertext, char key) {
         char pt = key;
         char cipher = ciphertext;
@@ -59,7 +59,7 @@ public class Cipher {
             return cipher;
         }
         else {
-            pt = (char)((Math.abs(((int)pt - 'a') - ((int)cipher - 'a'))) % 26 + 'a');
+            pt = (char)((Math.abs(((int)cipher - 'a') - ((int)pt - 'a'))) % 26 + 'a');
         }
         return pt;
     }

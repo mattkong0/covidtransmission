@@ -27,6 +27,9 @@ public class Cipher {
 
     //Validity Checking Part 2
     public static boolean isLowerCase(String str) {
+        if (str == null) {
+            return false;
+        }
         for (int j = 0; j < str.length(); j++) {
             char currChar = str.charAt(j);
             if (! ( (currChar >= 'a') && (currChar <= 'z') ) ) {
@@ -59,7 +62,7 @@ public class Cipher {
             return cipher;
         }
         else {
-            pt = (char)((Math.abs(((int)cipher - 'a') - ((int)pt - 'a'))) % 26 + 'a');
+            pt = (char)((((int)cipher - 'a') - ((int)pt - 'a') + 26) % 26 + 'a');
         }
         return pt;
     }

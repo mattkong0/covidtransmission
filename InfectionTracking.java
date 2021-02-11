@@ -116,24 +116,24 @@ public class InfectionTracking {
 
         // check if either array is null
         if ( (locations == null) || (movements == null) ) {
-            System.out.println("");
+            System.out.println(locations);
         }
 
         // Check if world size is negative
         if (worldSize < 0) {
-            System.out.println("");
+            System.out.println(locations);
         }
 
         // check for any negative input in location
         for (int i = 0; i < locations.length; i++) {
             if (locations[i] < 0) {
-                System.out.println("");
+                System.out.println(locations);
             }
         }
 
         // Check if locations and movements don't have the same length
         if (locations.length != movements.length) {
-            System.out.println("");
+            System.out.println(locations);
         }
         else {
             // Update location of student

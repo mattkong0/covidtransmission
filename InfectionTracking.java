@@ -179,7 +179,7 @@ public class InfectionTracking {
         // check for any invalid inputs in infections
         for (int i = 0; i < infections.length; i++) {
             // check if infection value is not 0 or 1
-            if ( ! ( (infections[i] == 0) || (infections[i] == 1) ) ) {
+            if ( ! ( (infections[i] == 0) && (infections[i] == 1) ) ) {
                 return null;
             }
         }

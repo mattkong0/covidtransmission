@@ -137,7 +137,7 @@ public class InfectionTracking {
         }
         else {
             // Update location of student
-            for (int i = 0; i < movements.length; i++) {
+            for (int i = 0; i < locations.length; i++) {
                 // condition 1: check if updated location is less than 0
                 if (locations[i] + movements[i] < 0) {
                     locations[i] = (locations[i] + movements[i] + worldSize) 

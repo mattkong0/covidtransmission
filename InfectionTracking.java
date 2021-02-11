@@ -124,9 +124,9 @@ public class InfectionTracking {
             return;
         }
 
-        // check for any negative input in location
+        // check if input is outside of [0, worldSize]
         for (int i = 0; i < locations.length; i++) {
-            if (locations[i] < 0) {
+            if ( (locations[i] < 0) || (locations[i] > worldSize)) {
                 return;
             }
         }

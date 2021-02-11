@@ -178,16 +178,15 @@ public class InfectionTracking {
 
         // check for any invalid inputs in infections
         for (int i = 0; i < infections.length; i++) {
-            // check if infection value is not 0 or 1
-            if ( ! ( (infections[i] == 0) && (infections[i] == 1) ) ) {
+            // check if infection value is not 0 and 1
+            if ( (infections[i] != 0) && (infections[i] != 1) ) {
                 return null;
             }
         }
 
         // check if any value in locations is out of range [0, worldSize - 1]
         for (int i = 0; i < locations.length; i++) {
-            if ( ! ( (locations[i] > 0) && 
-                     (locations[i] < worldSize) ) ) {
+            if ( (locations[i] < 0) || (locations[i] > worldSize) ) {
                 return null;
             }
         }

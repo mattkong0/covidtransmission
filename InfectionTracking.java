@@ -41,8 +41,19 @@ public class InfectionTracking {
             return -1;
         }
 
+        // check if array lengths match
+        if ( (names.length != locations.length) ||
+             (locations.length != movements.length) || 
+             (movements.length != infections.length) ) {
+            return -1;
+        }
+
         for(int i = 0; in.hasNextLine(); i++) {// parse info to parallel arrays
             String[] str = in.nextLine().split(",");
+            // check if inputFile length matches array length
+            if (i > names.length) {
+                return -1;
+            }
 
             // get values from each line
             String person = str[0];
@@ -289,13 +300,10 @@ public class InfectionTracking {
         avg = sum / infectionRecord.length;
 
         // find smallest integer greater than current average
-        int small = 0;
-        for (int i = 0; i < infectionRecord.length; i++) {
-            if ( (infectionRecord[i] > avg) && (infectionRecord[i] <= avg + 1) ) {
-                small = infectionRecord[i];
-            }
+        if (sum % infectionRecord.length > 0) {
+            avg = avg + 1;
         }
-        return small;
+        return avg;
     }
 
     // This method returns the name of the student who 

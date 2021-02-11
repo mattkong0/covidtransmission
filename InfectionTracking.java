@@ -142,7 +142,7 @@ public class InfectionTracking {
         for (int i = 0; i < locations.length; i++) {
             // condition 1: check if updated location is less than 0
             if (locations[i] + movements[i] < 0) {
-                locations[i] = locations[i] + (movements[i] % worldSize)
+                locations[i] = (locations[i] + (movements[i] % worldSize) + worldSize)
                                % worldSize;
             }
             // condition 2: check if updated location is bigger than size

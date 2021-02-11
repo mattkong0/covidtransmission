@@ -34,8 +34,10 @@ public class InfectionTracking {
         }
 
         // check if any of the arrays are null
-        if ( (names == null) || (locations == null) || 
-             (movements == null) || (infections == null) ) {
+        if ( (names == null) || 
+             (locations == null) || 
+             (movements == null) || 
+             (infections == null) ) {
             return -1;
         }
 
@@ -140,7 +142,8 @@ public class InfectionTracking {
         for (int i = 0; i < locations.length; i++) {
             // condition 1: check if updated location is less than 0
             if (locations[i] + movements[i] < 0) {
-                locations[i] = locations[i] + (movements[i] % worldSize);
+                locations[i] = locations[i] + (movements[i] % worldSize)
+                               % worldSize;
             }
             // condition 2: check if updated location is bigger than size
             else if (locations[i] + movements[i] >= worldSize) {

@@ -96,9 +96,62 @@ public class InfectionTracking {
     }
 
     // helper method to print out str array
+    public static void p// Part 1: Reading Input File and Populating Arrays
+    // This method sorts info from input file into its corresponding arrays.
+    public static int populateArrays(String pathToFile, String[] names, 
+                                    int[] locations, int[] movements,
+                                    int[] infections) throws IOException {
+        
+        // Open file with scanner
+        Scanner in = new Scanner(new File(pathToFile));
+
+        // Check if file is null (in other words, not found)
+        if (pathToFile == null) {
+            return -1;
+        }
+
+        // check if any of the arrays are null
+        if ( (names == null) || 
+             (locations == null) || 
+             (movements == null) || 
+             (infections == null) ) {
+            return -1;
+        }
+
+        for(int i = 0; in.hasNextLine(); i++) {// parse info to parallel arrays
+            String[] str = in.nextLine().split(",");
+
+            // get values from each line
+            String person = str[0];
+            int place = Integer.parseInt(str[1]);
+            int action = Integer.parseInt(str[2]);
+            int cas = Integer.parseInt(str[3]);
+
+            names[i] = person;
+            locations[i] = place;
+            movements[i] = action;
+            infections[i] = cas;
+        }
+
+        printArrayStr(names);
+        printArrayInt(locations);
+        printArrayInt(movements);
+        printArrayInt(infections);
+
+        // get maximum value of location
+        int maxVal = 0;
+        for (int i = 0; i < locations.length; i++) {
+            if (locations[i] > maxVal) {
+                maxVal = locations[i];
+            }
+        }
+        return maxVal + 1;
+    }
+
+    // helper method to print out str array
     public static void printArrayStr(String[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i] + ",");
         }
         System.out.print("");
     }
@@ -106,7 +159,7 @@ public class InfectionTracking {
     // helper method to print out int array
     public static void printArrayInt(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i] + ",");
         }
         System.out.println("");
     }
@@ -331,12 +384,17 @@ public class InfectionTracking {
             return null;
         }
 
-        // check 2: check if either array is null
+        // check 2: check if arrays have different lengths
+        if (infectionRecord.length != names.length) {
+            return null;
+        }
+
+        // check 3: check if either array is null
         if ( (infectionRecord == null) || (names == null) ) {
             return null;
         }
 
-        // check 3: check if any value in infectionRecord is negative
+        // check 4: check if any value in infectionRecord is negative
         for (int i = 0; i < infectionRecord.length; i++) {
             if (infectionRecord[i] < 0) {
                 return null;

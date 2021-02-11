@@ -116,43 +116,43 @@ public class InfectionTracking {
 
         // check if either array is null
         if ( (locations == null) || (movements == null) ) {
-            System.out.println(locations);
+            return;
         }
 
         // Check if world size is negative
         if (worldSize < 0) {
-            System.out.println(locations);
+            return;
         }
 
         // check for any negative input in location
         for (int i = 0; i < locations.length; i++) {
             if (locations[i] < 0) {
-                System.out.println(locations);
+                return;
             }
         }
 
         // Check if locations and movements don't have the same length
         if (locations.length != movements.length) {
-            System.out.println(locations);
+            return;
         }
-        else {
-            // Update location of student
-            for (int i = 0; i < locations.length; i++) {
-                // condition 1: check if updated location is less than 0
-                if (locations[i] + movements[i] < 0) {
-                    locations[i] = (locations[i] + movements[i] + worldSize) 
-                                    % worldSize;
-                }
-                // condition 2: check if updated location is bigger than size
-                else if (locations[i] + movements[i] >= worldSize) {
-                    locations[i] = (locations[i] + movements[i]) % worldSize;
-                }
-                // condition 3: if 1 and 2 don't apply
-                else {
-                    locations[i] = locations[i] + movements[i];
-                }
+
+        // Update location of student
+        for (int i = 0; i < locations.length; i++) {
+            // condition 1: check if updated location is less than 0
+            if (locations[i] + movements[i] < 0) {
+                locations[i] = (locations[i] + movements[i] + worldSize) 
+                                % worldSize;
+            }
+            // condition 2: check if updated location is bigger than size
+            else if (locations[i] + movements[i] >= worldSize) {
+                locations[i] = (locations[i] + movements[i]) % worldSize;
+            }
+            // condition 3: if 1 and 2 don't apply
+            else {
+                locations[i] = locations[i] + movements[i];
             }
         }
+
         System.out.println(locations);
     }
 

@@ -57,8 +57,8 @@ public class InfectionTracking {
         int strLen2 = places.length;
         int strLen3 = actions.length;
         int strLen4 = cases.length;
-        if ( (strLen1 != strLen2) || 
-             (strLen2 != strLen3) || 
+        if ( (strLen1 != strLen2) && 
+             (strLen2 != strLen3) && 
              (strLen3 != strLen4) ) {
             return -1;
         }

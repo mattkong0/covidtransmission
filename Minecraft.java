@@ -2,12 +2,14 @@
  * Name: Matthew Kong
  * ID: A16660796
  * Email: mkong@ucsd.edu
- * Sources used: None
+ * Sources used: tutors
  * 
  * This file allows us to create a server in Minecraft.
  * This file will also allow us to determine who needs to get
  * tested before going to the Minecraft Party.
  */
+
+import java.util.ArrayList;
 
 /**
  * This class will create a Minecraft server.

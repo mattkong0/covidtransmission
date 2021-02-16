@@ -54,16 +54,16 @@ public class Minecraft {
             for (int col = 0; col < groups[row].length; col++) {
                 String villager = groups[row][col];
                 // check if infected is in the group 
-                if (villager.equals(infected)) {
+                if (infected.equals(villager)) {
                     String [] mobs = groups[row];
                     // what we have now that infected is in
                     for (String testers : mobs) {
                         // check for any null inputs in the group
-                        if (villager.equals(null)) {
+                        if (testers == null) {
                             continue;
                         }
                         // those that are affected who need to get tested
-                        if (!villager.equals(infected)) {
+                        if (!testers.equals(infected)) {
                             if (!getTested.contains(testers)) { // duplicates
                                 getTested.add(testers);
                             }
@@ -90,9 +90,8 @@ public class Minecraft {
     //helper method to print out a string array
     public static void printArrayString(ArrayList<String> arr) {
         for (int i = 0; i < arr.size(); i++) {
-            System.out.print(arr.get(i) + " ");
+            System.out.print(arr.get(i) + ",");
         }
         System.out.println("");
     }
 }
-

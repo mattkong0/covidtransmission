@@ -30,6 +30,9 @@ public class Minecraft {
                                 [originalFloorPlan.length];
         for (int row = 0; row < originalFloorPlan[0].length; row++) {
             for (int col = 0; col < originalFloorPlan.length; col++) {
+                if (rotd[row][col] < 0) {
+                    return null;
+                }
                 rotd[row][col] = originalFloorPlan
                                  [originalFloorPlan.length-1-col]
                                  [row];

@@ -53,18 +53,20 @@ public class Minecraft {
         for (int row = 0; row < groups.length; row++) {
             for (int col = 0; col < groups[row].length; col++) {
                 String villager = groups[row][col];
-                // check for any null inputs in the group
-                if (villager.equals(null)) {
-                    continue;
-                }
                 // check if infected is in the group 
                 if (villager.equals(infected)) {
                     String [] mobs = groups[row];
                     // what we have now that infected is in
                     for (String testers : mobs) {
+                        // check for any null inputs in the group
+                        if (villager.equals(null)) {
+                            continue;
+                        }
                         // those that are affected who need to get tested
                         if (!villager.equals(infected)) {
-                            getTested.add(testers);
+                            if (!getTested.contains(testers)) { // duplicates
+                                getTested.add(testers);
+                            }
                         }
                     }
                     // infected is only gone through once to prevent any duplicates
@@ -93,3 +95,4 @@ public class Minecraft {
         System.out.println("");
     }
 }
+

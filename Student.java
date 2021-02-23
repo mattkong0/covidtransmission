@@ -138,6 +138,11 @@ public class Student {
     // This method assesses the student's risk of COVID-19
     public int riskCheck(Server server, int fromTime, boolean quarantineChoice) {
 
+        // invalid inputs
+        if ( (server == null) || (fromTime < 0) ) {
+            return -1;
+        }
+
         // get recent contacts with positive cases
         ArrayList<ContactInfo> covidCases = getRecentPositiveContacts(server, fromTime);
 

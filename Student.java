@@ -40,7 +40,7 @@ public class Student {
     public boolean setLocation(int newLocation) {
         if ( (newLocation > 0) && 
              (inQuarantine == false) ) {// valid location and no quarantine
-            location += newLocation;
+            location = newLocation;
             return true;
         }
         

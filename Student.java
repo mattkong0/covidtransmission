@@ -2,7 +2,7 @@
  * Name: Matthew Kong
  * ID: A16660796
  * Email: mkong@ucsd.edu
- * Sources used: zybook
+ * Sources used: zybook, tutor
  * 
  * This file looks at a student's  COVID-19 current test status.
  * This file also handles ID exchanges and student-related functionality.
@@ -55,7 +55,7 @@ public class Student {
         int newId = randGen.nextInt(Integer.MAX_VALUE);
 
         // store updatedId in usedIds
-        usedIds.add(usedIds.indexOf(id), newId);
+        usedIds.add(newId);
     }
 
     // This method adds new contact info to array contactHistory
@@ -170,3 +170,4 @@ public class Student {
         return 0;
     }
 }
+

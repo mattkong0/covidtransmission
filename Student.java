@@ -52,10 +52,10 @@ public class Student {
 
         // Setup random number generator
         Random randGen = new Random();
-        int newId = randGen.nextInt(Integer.MAX_VALUE);
+        id = randGen.nextInt(Integer.MAX_VALUE);
 
         // store updatedId in usedIds
-        usedIds.add(newId);
+        usedIds.add(id);
     }
 
     // This method adds new contact info to array contactHistory

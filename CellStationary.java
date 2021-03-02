@@ -33,6 +33,7 @@ public class CellStationary extends Cell{
     }
 
     // this method returns true or false depending on the given conditions
+    @Override
     public boolean checkApoptosis(List<Cell> neighbors) {
         if ( (neighbors.size() <= 7) && 
              (neighbors.size() >= 3) ) {// given conditions

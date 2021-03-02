@@ -38,6 +38,7 @@ public class CellDivide extends Cell{
     }
 
     // returns true or false depending on the given conditions
+    @Override
     public boolean checkApoptosis(List<Cell> neighbors) {
         if (neighbors.size() == 3) {// given condition
             return true;

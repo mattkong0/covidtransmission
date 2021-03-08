@@ -29,7 +29,6 @@ public class CellMoveToggle extends CellMoveUp{
     // copy Constructor for CellMoveToggle
     public CellMoveToggle(CellMoveToggle otherCellMoveToggle) {
         super(otherCellMoveToggle);
-        this.toggled = true;
     }
 
     // returns string representation of CellMoveToggle depending on condition

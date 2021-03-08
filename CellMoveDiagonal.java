@@ -35,12 +35,6 @@ public class CellMoveDiagonal extends CellMoveUp{
     // copy Constructor for CellMoveDiagonal
     public CellMoveDiagonal(CellMoveDiagonal otherCellMoveDiagonal) {
         super(otherCellMoveDiagonal);
-
-        // default for orientedRight
-        this.orientedRight = true;
-
-        // default for diagonalMoves
-        this.diagonalMoves = 0;
     }
 
     // returns string representation of CellMoveDiagonal depending on condition
@@ -48,7 +42,7 @@ public class CellMoveDiagonal extends CellMoveUp{
         if (orientedRight) {
             return "/";
         }
-        return "\"";
+        return "\\";
     }
 
     // returns true or false depending on given condition

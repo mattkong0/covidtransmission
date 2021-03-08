@@ -29,7 +29,6 @@ public class CellDivide extends Cell{
     // copy Constructor for CellDivide
     public CellDivide(CellDivide otherCellDivide) {
         super(otherCellDivide);
-        this.direction = 1;
     }
 
     // returns string representation of CellDivide

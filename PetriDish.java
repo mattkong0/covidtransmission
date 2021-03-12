@@ -29,13 +29,15 @@ public class PetriDish {
             for (int j = 0; j < board[i].length; j++) {
                 String input = board[i][j];
                 
-                // check for null strings
-                if (input == null) {
-                    continue;
-                }
-
                 // split input from board
                 String [] boardInfo = input.strip().split(" ");
+
+                // check for null strings
+                if (boardInfo == null || 
+                    boardInfo.length == 1 || 
+                    boardInfo.length == 0) {
+                    continue;
+                }
 
                 // get info from string
                 String boardType = boardInfo[0];
